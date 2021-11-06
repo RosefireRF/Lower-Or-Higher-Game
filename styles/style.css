@@ -7,26 +7,34 @@
     padding: 0;
 }
 .controls{
+    position: relative;
     z-index: 2;
 }
 #shower {
     width: 100%;
     height: 100vh;
-    background: white;
-  }
+    background:  #ADFF2F;
+    position: relative;
+}
 .topTo {
+    top: 0;
     animation-name: topToBottom;
     animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
-.bottomTo {
-    animation-name: bottomToTop;
+.botTo {
+    bottom: 0;
+    animation-name: topToBottom;
     animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+#red{
+    z-index: 0;
+    background-color: red;
+    position:absolute;
+    width: 100%;
 }
 @keyframes topToBottom {
-    from {background: linear-gradient(red 0%, green 0% 100%)}
-    to {background: linear-gradient(red var(--red), green var(--red) 100%);}
-}
-@keyframes bottomToTop {
-    from {background: linear-gradient(red 0%, green 0% 100%)}
-    to {background: linear-gradient(green var(--green), red var(--green) 100%);}
+    from {height: 0%;}
+    to {height: var(--red);}
 }
